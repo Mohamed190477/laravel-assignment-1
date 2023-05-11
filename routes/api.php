@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\V1\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\CompaniesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,7 @@ Route::get('/test', function () {
         'status' => '401'
     ], 400));
 });
+//add route for sign up to company controller
+Route::post('/company/register', [CompaniesController::class, 'signUp']);
+//add route for login to company controller
+Route::post('/company/login', [CompaniesController::class, 'login']);

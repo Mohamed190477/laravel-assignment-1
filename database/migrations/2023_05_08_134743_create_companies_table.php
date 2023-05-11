@@ -23,7 +23,7 @@ return new class extends Migration
             $table->decimal('latitude', 10, 7);
             $table->enum('company_size', ['Micro', 'Small', 'Mini', 'Large'])->nullable();
             $table->string('password');
-            $table->string('image');
+            $table->string('image', 255)->nullable();
             $table->timestamps();
         });
     }
